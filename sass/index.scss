@@ -9,13 +9,27 @@
         position: relative;
         overflow: hidden;
     }
-    .div-img{
+    .div-bg-img{
         position: absolute;
         left: 0px;
         overflow: hidden;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         align-items: center;
+    }
+    .div-house1-img{
+        width: 10%;
+        position: absolute;
+        left: 100px;
+        top: 340px;
+        animation: house1 3s ease-in-out infinite;
+    }
+    .div-house2-img{
+        width: 7%;
+        position: absolute;
+        left: 300px;
+        top: 360px;
+        animation: house2 5s ease-in-out infinite;
     }
 
     .div-blue{
@@ -30,6 +44,49 @@
         top: 300px;
         //overflow: hidden;
     }
+
+    @keyframes house1 {
+        0% {
+            -moz-transform: translateY(calc(100px/2));
+            -webkit-transform: translateY(calc(100px/2));
+            -o-transform: translateY(calc(100px/2));
+            -ms-transform: translateY(calc(100px/2));
+        }
+        50% {
+            -moz-transform: translateY(30px);
+            -webkit-transform: translateY(30px);
+            -o-transform: translateY(30px);
+            -ms-transform: translateY(30px);
+        }
+        100% {
+            -moz-transform: translateY(calc(100px/2));
+            -webkit-transform: translateY(calc(100px/2));
+            -o-transform: translateY(calc(100px/2));
+            -ms-transform: translateY(calc(100px/2));
+        }
+    }
+    @keyframes house2 {
+        0% {
+            -moz-transform: translateY(calc(100px/2));
+            -webkit-transform: translateY(calc(100px/2));
+            -o-transform: translateY(calc(100px/2));
+            -ms-transform: translateY(calc(100px/2));
+        }
+        50% {
+            -moz-transform: translateY(40px);
+            -webkit-transform: translateY(40px);
+            -o-transform: translateY(40px);
+            -ms-transform: translateY(40px);
+        }
+        100% {
+            -moz-transform: translateY(calc(100px/2));
+            -webkit-transform: translateY(calc(100px/2));
+            -o-transform: translateY(calc(100px/2));
+            -ms-transform: translateY(calc(100px/2));
+        }
+    }
+
+
 
     .wave-svg-shape-blue {
         fill: #bce5f5;
