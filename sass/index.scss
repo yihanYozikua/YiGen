@@ -4,23 +4,28 @@
     background-color: black;
     // padding-top: 60px;
     // padding-bottom: 120px;
+
     .div-relative{
         position: relative;
+        overflow: hidden;
     }
     .div-img{
         position: absolute;
         left: 0px;
+        overflow: hidden;
     }
 
     .div-blue{
         position: absolute;
         left: 0px;
-        top: 30px;
+        top: 300px;
+        //overflow: hidden;
     }
     .div-white{
         position: absolute;
         left: 0px;
-        top: 0px;
+        top: 300px;
+        //overflow: hidden;
     }
 
     .wave-svg-shape-blue {
