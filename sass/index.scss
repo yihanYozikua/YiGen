@@ -1,101 +1,95 @@
 @import "./vars.scss";
 
-#section-map{
-    #map{
-        height: 700px;
-        width: 100%;
-    }
- }
-
-#section-banner {
-    background-color: $theme-color;
-    padding-top: 60px;
-    padding-bottom: 120px;
-
-    #banner-container {
-        $container-height: 500px;
-
+#section-wave{
+    background-color: black;
+    // padding-top: 60px;
+    // padding-bottom: 120px;
+    .div-relative{
         position: relative;
+    }
+    .div-img{
+        position: absolute;
+        left: 0px;
+    }
+
+    .div-blue{
+        position: absolute;
+        left: 0px;
+        top: 30px;
+    }
+    .div-white{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+
+    .wave-svg-shape-blue {
+        fill: #bce5f5;
+        opacity: 90%;
+        position: relative;
+        width: 1000px;
+        height: 100%;
         overflow: hidden;
-        height: $container-height;
-        
-        @mixin overlay($height) {
-            // usage: @include overlay(XXXpx);
-            // 讓圖層能重疊，重疊順序目前用html dom的順序來決定，若變更複雜再使用z-index
-            position: absolute;
-            top: ($container-height / 2 - $height / 2);
-            height: $height;
-            left: 50%;
-            margin-left: -1 * ($height / 2);
-        }
-
-        canvas#banner-constellationel {
-            position: absolute;
-            top: 0;
-            width: 120%;
-            height: $container-height;
-            margin-left: -10%;
-        }
-        #banner-earth {
-            @include overlay($container-height);
-        }
-
-        #banner-logo {
-            @include overlay(225px);
-        }
+        transform: translateX(-100px);
+        animation: fillUpSvg-blue 7s ease-in-out infinite;
     }
-}
-
-#section-latest-news {
-    background-color: $theme-color;
-    padding-bottom: 180px;
-}
-
-.first-news {
-    background-color: white;
-    padding: 32px;
-
-    .news-container {
-        margin-top: 30px;
-    }
-
-    @include lg() {
+    .wave-svg-shape-blue .wave-svg {
         width: 100%;
-        padding: 32px 80px 32px 0px;
+        height: auto;
+        overflow: hidden;
+        float: left;
+        margin: 0;
+        animation: waveSvgAnim-blue 3s linear infinite;
+    }
+    @keyframes fillUpSvg-blue {
+      0% {
+        transform: translateY(calc(100px/2)) scaleY(0.8);
+      }
+      50% {
+        transform: translateY(0) scaleY(0.9);
+      }
+      100% {
+        transform: translateY(calc(100px/2)) scaleY(0.8);
+      }
+    }
+    @keyframes waveSvgAnim-blue {
+      0% {
+        transform: translateX(calc(-100px * 2));
+      }
+      100% {
+        transform: translateX(100px * 2);
+      }
+    }
 
-        .news-container {
-            margin-top: 0px;
-            margin-left: auto;
+    .wave-svg-shape-white {
+        fill: #ffffff;
+        opacity: 50%;
+        //position: relative;
+        left: 0px;
+        width: 1000px;
+        height: 100%;
+        overflow: hidden;
+        transform: translateX(-100px);
+        animation: fillUpSvg-white 6s ease-in-out infinite;
+    }
+    @keyframes fillUpSvg-white {
+        0% {
+          transform: translateY(calc(100px/2)) scaleY(0.8);
         }
-    }
+        50% {
+          transform: translateY(0) scaleY(0.8);
+        }
+        100% {
+          transform: translateY(calc(100px/2)) scaleY(0.8);
+        }
+      }
+      @keyframes waveSvgAnim-white {
+        0% {
+          transform: translateX(calc(-100px * 2));
+        }
+        100% {
+          transform: translateX(100px * 2);
+        }
+      }
 }
 
-.news-card {
-    border-radius: 0px;
-    border: none;
-    .news-container {
-        margin: 32px;
-    }
-}
-
-.news-img {
-    width: 100%;
-}
-.news-title {
-    color: $theme-color;
-    font-weight: 600;
-    line-height: 2em;
-    border-bottom: 2px solid $theme-color;
-}
-.news-content {
-    line-height: 1.2rem;
-}
-.news-link {
-    display: block;
-    background-color: $theme-color;
-    color: white !important;
-    // text-decoration: none!important;
-    // width: 100%;
-    text-align: center;
-    padding: 4px 16px;
-}
